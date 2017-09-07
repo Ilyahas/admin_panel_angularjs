@@ -1,0 +1,92 @@
+<div class="content">
+    <a href="#/" ng-if="$parent.showNav" type="button" class="ti-arrow-left btn btn-default custombutton-2 movebutton"></a>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="card col-md-8">
+                <div class="header">
+                    <h4 class="title">Редактирование</h4>
+                </div>
+                <div class="content">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Должность</label>
+                                    <h5>{{editVacancy.title}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row borders" ng-repeat="lines in editVacancy.card_description">
+                            <button type="button" ng-if="!$first" ng-click="up($index)" class="ti-arrow-up btn btn-primary custombutton-2 movebutton"></button>
+                            <button type="button" ng-if="!$last" ng-click="down($index)" class="ti-arrow-down btn btn-primary custombutton-2 movebutton"></button>
+                            <button type="button" class="ti-close btn btn-danger custombutton" ng-click="saveBlockIndex($index)" data-toggle="modal" data-target="#parentModal"></button>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control border-input title-bold" ng-model="lines.name" placeholder="Заголовок блока" >
+                                    <div class="lines-description" ng-repeat="line in lines.info track by $index">
+                                        <div class="col-md-11 col-sm-11">
+                                            <input type="text" class="form-control border-input" ng-model="lines.info[$index]" placeholder="Пункт блока" >
+                                        </div>
+                                        <div class="col-md-1 col-sm-1">
+                                            <button type="button" class="ti-close btn custombutton-2" ng-click="saveIndex($index, $parent.$index)" data-toggle="modal" data-target="#myModal"></button>
+                                            <button type="button" ng-if="$last" ng-click="addLine($parent.$parent.$index)" class="ti-plus btn btn-success custombutton-2 plusbutton"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="myModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Удалить строку?</h4>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn" style="display: none;" data-dismiss="modal">Нет</button>
+                                            <button type="button" class="btn" data-dismiss="modal">Нет</button>
+                                            <button type="button" class="btn btn-danger" ng-click="deleteLine()" data-dismiss="modal">Да</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div id="parentModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Удалить блок?</h4>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn" style="display: none;" data-dismiss="modal">Нет</button>
+                                            <button type="button" class="btn" data-dismiss="modal">Нет</button>
+                                            <button type="button" class="btn btn-danger" ng-click="deleteBlock()" data-dismiss="modal">Да</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" ng-click="addBlock()" class="ti-plus btn btn-success custombutton-2 position-right plusbutton"></button>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label><input type="checkbox" ng-model="editVacancy.isActive"> Активна</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-info btn-fill btn-wd" ng-click="update()" >Изменить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

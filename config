@@ -1,0 +1,5 @@
+host github.com
+ HostName github.com
+ IdentityFile /usr/src/app/github
+ User ilyafreshcode
+ StrictHostKeyChecking no

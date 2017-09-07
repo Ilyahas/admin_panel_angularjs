@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "username": "admin",
+      "password": "$2a$10$SVzFPo2vzT.riM4nvhzqae5gQuepbdWDDFnzYA37I16kSM/p1cefe",
+      "token": "tCR4[hIYtPAjfVg",
+      "byToken": false
+    },
+    {
+      "username": "admin2",
+      "password": "$2a$10$MLaOt2uGIa9IuXZrsJq3QefQevBKKxWft6RzKAr9LGaC7z.n0cTyC",
+      "token": "]n[UaAHq{eWUD1}",
+      "byToken": true
+    }
+  ]
+}

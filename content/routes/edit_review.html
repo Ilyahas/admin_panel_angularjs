@@ -1,0 +1,61 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="card col-md-8">
+                <div class="header">
+                    <h4 class="title">Редактирование</h4>
+                </div>
+                <div class="content">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="alert alert-danger">
+                                        <span>Ошибка загрузки фоторграфии</span>
+                                    </div>
+                                    <label>Фото</label>
+                                    <br>
+                                    <img class="person-img" ngf-thumbnail="reviewsData.img" />
+                                    <br>
+                                    <review-main-first ng-if="section === 'first'"></review-main-first>
+                                    <review-main-second ng-if="section === 'second'"></review-main-second>
+                                    <review-edit ng-if="section === 'main'"></review-edit>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Имя</label>
+                                    <input type="text" ng-model="reviewsData.name" class="form-control border-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Должность</label>
+                                    <input type="text" ng-model="reviewsData.title" class="form-control border-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Отзыв</label>
+                                    <textarea ng-model="reviewsData.text" rows="4" cols="50" class="form-control border-input"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-info btn-fill btn-wd" ng-click="update()" >Изменить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

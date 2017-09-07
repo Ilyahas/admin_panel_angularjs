@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+
+
+<div class="login-page content">
+    <div class="form">
+        {{#if error }}
+            <p class="login-error-msg">Ошибка входа! Повторите попытку.</p>
+        {{/if}}
+        <form class="login-form" method="post" action="/login">
+            <input type="text" placeholder="Логин" name="username" required/>
+            <input type="password" placeholder="Пароль" name="password" required/>
+            <button type="submit">Войти</button>
+        </form>
+    </div>
+</div>
+
+
+<script src="/js/jquery-1.10.2.js"></script>
+</body>
+
+
+
+
+
+
+
+

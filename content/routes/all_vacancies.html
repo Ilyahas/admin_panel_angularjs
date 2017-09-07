@@ -1,0 +1,30 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-lg-4 col-sm-6" ng-repeat="vacancy in allVacancies">
+                <div class="card">
+                    <div class="content">
+                        <span class="vacancy-title">{{vacancy.title}}</span>
+                        <div class="footer">
+                            <hr>
+                            <label><input type="checkbox" ng-checked="{{vacancy.isActive}}" ng-model="vacancy.isActive"> Активна</label>
+                            <a href="#/vacancy/edit/{{$index}}" class="btn btn-primary right-position">Изменить</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
