@@ -1,4 +1,4 @@
-Freshcode Jobs Admin Panel
+Admin Panel
 ==========================
 
 Installation:
